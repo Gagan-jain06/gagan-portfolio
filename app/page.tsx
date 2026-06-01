@@ -1,65 +1,228 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen animated-bg bg-gradient-to-br from-black via-slate-900 to-black text-white">
+      {/* Navbar */}
+      <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-xl border-b border-white/10 z-50">
+        <div className="max-w-6xl mx-auto flex justify-between items-center p-5">
+          <h1 className="text-xl font-bold">Gagan Jain</h1>
+          <div className="aurora"></div>
+          <div className="space-x-6">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <div className="absolute inset-0">
+
+  {[...Array(50)].map((_, i) => (
+    <div
+      key={i}
+      className="absolute bg-white rounded-full animate-pulse"
+      style={{
+        width: "2px",
+        height: "2px",
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+      }}
+    />
+  ))}
+
+</div>
+      <motion.section
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden"
+>{/* Floating Particles */}
+<div className="absolute inset-0">
+  {[...Array(20)].map((_, i) => (
+    <motion.div
+      key={i}
+      className="absolute w-3 h-3 bg-cyan-400 rounded-full opacity-30"
+      animate={{
+        y: [0, -100, 0],
+        x: [0, 50, 0],
+      }}
+      transition={{
+        duration: 10 + i,
+        repeat: Infinity,
+      }}
+      style={{
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+      }}
+    />
+  ))}
+</div><motion.div
+  animate={{ y: [0, -10, 0] }}
+  transition={{
+    duration: 3,
+    repeat: Infinity
+  }}
+>
+  <Image
+    src="/myphoto.jpg"
+    alt="Gagan Jain"
+    width={180}
+    height={180}
+    className="rounded-full"
+  />
+</motion.div>
+        <motion.h1
+  initial={{ scale: 0.5, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 1 }}
+  className="text-6xl font-bold"
+>
+  Gagan Jain
+</motion.h1>
+
+        <p className="text-2xl mt-4">
+          Computer Science Engineering Student
+        </p>
+
+        <p className="text-gray-400 mt-4 max-w-2xl">
+          Passionate about Software Development,
+          Artificial Intelligence, Web Development,
+          and building innovative digital products.
+        </p>
+
+        <a
+          href="#projects"
+          
+        >
+          View My Projects
+        </a>
+        <a
+  href="/resume.pdf"
+  target="_blank"
+  className="mt-4 border border-white px-6 py-3 rounded-lg"
+>
+  Download Resume
+</a>
+      </motion.section>
+
+      {/* About */}
+      <section
+        id="about"
+        className="max-w-5xl mx-auto py-20 px-8"
+      >
+        <h2 className="text-4xl font-bold mb-8">
+          About Me
+        </h2>
+
+        <p className="text-lg text-gray-300 leading-8">
+          I am a Computer Science Engineering student at SRM University with a strong interest in software development, artificial intelligence, web development, and emerging technologies. I enjoy learning new concepts, solving real-world problems, and building projects that enhance my technical skills and creativity.Through academic coursework, personal projects, and continuous learning, I aim to develop solutions that create meaningful impact. I believe in learning by building, which motivates me to work on practical projects and experiment with innovative ideas.
+        </p>
+      </section>
+
+      {/* Skills */}
+      <section
+        id="skills"
+        className="max-w-5xl mx-auto py-20 px-8"
+      >
+        <h2 className="text-4xl font-bold mb-10">
+          Skills
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            "Python",
+            "Java",
+            "C++",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "AI & Automation"
+          ].map((skill) => (
+            <div
+              key={skill}
+              className="bg-gray-900 p-4 rounded-lg text-center transition-all hover:scale-105 hover:bg-gray-800"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              {skill}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section
+        id="projects"
+        className="max-w-5xl mx-auto py-20 px-8"
+      >
+        <h2 className="text-4xl font-bold mb-10">
+          Projects
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold mb-3">
+              AI Study Assistant
+            </h3>
+
+            <p className="text-gray-400">
+              AI-powered chatbot helping students learn concepts.
+            </p>
+          </div>
+
+          <div className="bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold mb-3">
+              Portfolio Website
+            </h3>
+
+            <p className="text-gray-400">
+              Personal portfolio built using Next.js and Tailwind CSS.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section
+        id="contact"
+        className="max-w-5xl mx-auto py-20 px-8"
+      >
+        <h2 className="text-4xl font-bold mb-10">
+          Contact Me
+        </h2>
+
+        <div className="space-y-4 text-lg">
+          <p>📧 gaganjain0609@gmail.com</p>
+
+          <p>
+            💼 LinkedIn:
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://linkedin.com/in/gagan-jain-44479"
+              target="_blank"
+              className="text-blue-400 ml-2"
             >
-              Learning
-            </a>{" "}
-            center.
+              Gagan Jain
+            </a>
+          </p>
+
+          <p>
+            💻 GitHub:
+            <a
+              href="https://github.com/Gagan-jain06"
+              target="_blank"
+              className="text-blue-400 ml-2"
+            >
+              @Gagan-jain06
+            </a>
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+    </main>
   );
 }
