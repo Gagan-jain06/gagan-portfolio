@@ -97,11 +97,11 @@ export default function Home() {
         </p>
 
         <a
-          href="#projects"
-          
-        >
-          View My Projects
-        </a>
+  href="#projects"
+  className="mt-8 bg-cyan-500 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
+>
+  View My Projects
+</a>
         <a
   href="/resume.pdf"
   target="_blank"
@@ -114,7 +114,7 @@ export default function Home() {
       {/* About */}
       <section
         id="about"
-        className="max-w-5xl mx-auto py-20 px-8"
+        className="max-w-5xl mx-auto py-20 px-4 md:px-8"
       >
         <h2 className="text-4xl font-bold mb-8">
           About Me
@@ -128,7 +128,7 @@ export default function Home() {
       {/* Skills */}
       <section
         id="skills"
-        className="max-w-5xl mx-auto py-20 px-8"
+        className="max-w-5xl mx-auto py-20 px-4 md:px-8"
       >
         <h2 className="text-4xl font-bold mb-10">
           Skills
@@ -154,11 +154,22 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="max-w-5xl mx-auto py-20 px-4 md:px-8">
+  <h2 className="text-4xl font-bold mb-8">
+    Achievements
+  </h2>
 
+  <ul className="space-y-4">
+    <li>🎓 Computer Science Engineering Student at SRM University</li>
+    <li>💻 Building AI & Web Development Projects</li>
+    <li>🚀 Learning Full Stack Development</li>
+    <li>📚 Exploring Artificial Intelligence & Automation</li>
+  </ul>
+</section>
       {/* Projects */}
       <section
         id="projects"
-        className="max-w-5xl mx-auto py-20 px-8"
+        className="max-w-5xl mx-auto py-20 px-4 md:px-8"
       >
         <h2 className="text-4xl font-bold mb-10">
           Projects
@@ -190,7 +201,7 @@ export default function Home() {
       {/* Contact */}
       <section
         id="contact"
-        className="max-w-5xl mx-auto py-20 px-8"
+        className="max-w-5xl mx-auto py-20 px-4 md:px-8"
       >
         <h2 className="text-4xl font-bold mb-10">
           Contact Me
@@ -222,7 +233,13 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <footer className="text-center py-10 border-t border-white/10">
+  <p>© 2026 Gagan Jain</p>
 
+  <p className="text-gray-500 mt-2">
+    Built with Next.js, Tailwind CSS & Framer Motion
+  </p>
+</footer>
     </main>
   );
 }
