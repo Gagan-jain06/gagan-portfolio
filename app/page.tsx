@@ -176,16 +176,24 @@ export default function Home() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-            <h3 className="text-2xl font-bold mb-3">
-              AI Study Assistant
-            </h3>
+          <a
+  href="/ai-study-assistant"
+  className="block bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl"
+>
+  <h3 className="text-2xl font-bold mb-3">
+    AI Study Assistant
+  </h3>
 
-            <p className="text-gray-400">
-              AI-powered chatbot helping students learn concepts.
-            </p>
-          </div>
+  <p className="text-gray-400">
+    AI-powered chatbot helping students learn concepts.
+  </p>
 
+  <div className="mt-4">
+    <span className="bg-cyan-500 text-black px-4 py-2 rounded-lg font-bold">
+      Live Demo →
+    </span>
+  </div>
+</a>
           <div className="bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
             <h3 className="text-2xl font-bold mb-3">
               Portfolio Website
