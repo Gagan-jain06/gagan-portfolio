@@ -21,44 +21,42 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <div className="absolute inset-0">
-
-  {[...Array(50)].map((_, i) => (
-    <div
-      key={i}
-      className="absolute bg-white rounded-full animate-pulse"
-      style={{
-        width: "2px",
-        height: "2px",
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-      }}
-    />
-  ))}
+      <div className="absolute inset-0 pointer-events-none">
 
 </div>
       <motion.section
   initial={{ opacity: 0, y: 50 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1 }}
-  className="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden"
+  className="relative z-20 h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden"
 >{/* Floating Particles */}
-<div className="absolute inset-0">
-  {[...Array(20)].map((_, i) => (
+<div className="absolute inset-0 pointer-events-none">
+  {[
+    { top: "10%", left: "20%" },
+    { top: "20%", left: "80%" },
+    { top: "30%", left: "40%" },
+    { top: "40%", left: "70%" },
+    { top: "50%", left: "15%" },
+    { top: "60%", left: "60%" },
+    { top: "70%", left: "30%" },
+    { top: "80%", left: "85%" },
+    { top: "90%", left: "50%" },
+    { top: "15%", left: "90%" },
+  ].map((pos, i) => (
     <motion.div
       key={i}
       className="absolute w-3 h-3 bg-cyan-400 rounded-full opacity-30"
+      style={{
+        top: pos.top,
+        left: pos.left,
+      }}
       animate={{
-        y: [0, -100, 0],
-        x: [0, 50, 0],
+        y: [0, -20, 0],
+        x: [0, 20, 0],
       }}
       transition={{
         duration: 10 + i,
         repeat: Infinity,
-      }}
-      style={{
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
       }}
     />
   ))}
@@ -96,16 +94,17 @@ export default function Home() {
           and building innovative digital products.
         </p>
 
-        <a
+       <a
   href="#projects"
-  className="mt-8 bg-cyan-500 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
+  className="relative z-20 mt-8 bg-cyan-500 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
 >
   View My Projects
 </a>
-        <a
-  href="/resume.pdf"
+
+<a
+  href="/RESUME.pdf"
   target="_blank"
-  className="mt-4 border border-white px-6 py-3 rounded-lg"
+  className="relative z-20 mt-4 border border-white px-6 py-3 rounded-lg"
 >
   Download Resume
 </a>
