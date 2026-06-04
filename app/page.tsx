@@ -192,6 +192,7 @@ export default function Home() {
       Live Demo →
     </span>
   </div>
+  
 </a>
           <a
   href="https://gagan-portfolio-green.vercel.app"
@@ -207,6 +208,19 @@ export default function Home() {
               Personal portfolio built using Next.js and Tailwind CSS.
             </p>
           </a>
+          <a href="/expense-tracker-web">
+  <div className="bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+    
+  <h3 className="text-2xl font-bold mb-3">
+  Smart Expense Tracker
+
+    </h3>
+
+    <p className="text-gray-400">
+      Expense tracking dashboard built with Next.js, TypeScript, Tailwind CSS, Recharts and Local Storage.
+    </p>
+  </div>
+</a>
         </div>
       </section>
 
