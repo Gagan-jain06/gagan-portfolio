@@ -193,7 +193,12 @@ export default function Home() {
     </span>
   </div>
 </a>
-          <div className="bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+          <a
+  href="https://gagan-portfolio-green.vercel.app"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl"
+>
             <h3 className="text-2xl font-bold mb-3">
               Portfolio Website
             </h3>
@@ -201,7 +206,7 @@ export default function Home() {
             <p className="text-gray-400">
               Personal portfolio built using Next.js and Tailwind CSS.
             </p>
-          </div>
+          </a>
         </div>
       </section>
 
